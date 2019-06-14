@@ -4,6 +4,8 @@ import {Link,withRouter} from 'react-router-dom';
 
 class Sidebar extends  React.Component{
     render(){
+        let currentRoute=this.props.location.pathname;
+
         if(this.props.location.pathname==='/login' || this.props.location.pathname==='/'){
             return null
         }else{
@@ -20,8 +22,13 @@ class Sidebar extends  React.Component{
                         </div>
                         <span className="heading">Main</span>
                         <ul className="list-unstyled">
-                            <li className="active"><a href="index.html"> <i className="icon-home"></i>Home </a></li>
-                            <li><a href="tables.html"> <i className="icon-grid"></i>Tables </a></li>
+
+                            <li className={currentRoute==='/dashboard' ? "active" : ''}>
+                                <Link  to="/dashboard"> <i className="icon-home"></i>Dashboard </Link>
+                            </li>
+                            <li className={currentRoute==='/student-list' ? "active" : ''}>
+                                <Link  to="/student-list"> <i className="icon-grid"></i>Students </Link>
+                            </li>
                         
                         </ul>
                 </nav>
