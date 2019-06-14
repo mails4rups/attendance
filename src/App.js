@@ -8,6 +8,7 @@ import Footer from './component/footer';
 
 import Dashboard from './pages/dashboard';
 import Login from './pages/login';
+import Studentlist from './pages/student-list';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Sidebar/>
         <Switch>
             <Route path="/dashboard" component={Dashboard} />
+            <Route path="/student-list" component={Studentlist} />
             {/* <Route component={}/> */}
           </Switch>
         </div>
