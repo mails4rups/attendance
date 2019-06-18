@@ -1,12 +1,31 @@
 import React from 'react';
+import $ from "jquery";
 
 class Studentlist extends React.Component{
+    constructor(props){
+        super(props);
+        
+    }
+    /*********show modal function defination ****/
+    showModal=(param)=>{
+        $('#'+param).modal('show');
+    }
+
+
     render(){
         return(
             <div className="page-content">
                 <div className="page-header">
                     <div className="container-fluid">
-                        <h2 className="h5 no-margin-bottom">Student-List</h2>
+                        <div className="row">
+                            <div className="col-md-4">
+                            <h2 className="h5 no-margin-bottom">Student-List</h2>
+                            </div>
+                            <div className="col-md-4"></div>
+                            <div className="col-md-4">
+                                <button className="btn btn-primary pull-right" onClick={()=>{this.showModal('addStudentModal')}}>Add</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <section className="no-padding-top">
@@ -42,6 +61,33 @@ class Studentlist extends React.Component{
                     </div>
                 </div>
             </section>
+
+            <div id="addStudentModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" className="modal fade text-left">
+                      <div role="document" className="modal-dialog">
+                        <div className="modal-content">
+                          <div className="modal-header"><strong id="exampleModalLabel" className="modal-title">Signin Modal</strong>
+                            <button type="button" data-dismiss="modal" aria-label="Close" className="close"><span aria-hidden="true">×</span></button>
+                          </div>
+                          <div className="modal-body">
+                            <p>Lorem ipsum dolor sit amet consectetur.</p>
+                            <form>
+                              {/* <div className="form-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="Email Address" className="form-control"/>
+                              </div>
+                              <div className="form-group">       
+                                <label>Password</label>
+                                <input type="password" placeholder="Password" className="form-control"/>
+                              </div> */}
+                              <div className="form-group">       
+                                <input type="submit" value="Signin" className="btn btn-primary"/>
+                              </div>
+                            </form>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
 
             </div>    
 

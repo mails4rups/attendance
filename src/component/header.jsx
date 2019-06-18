@@ -26,7 +26,7 @@ class Header extends React.Component{
                                     
                                     </div>
                                     <div className="list-inline-item logout">
-                                        <a id="logout" href="login.html" className="nav-link"> <span className="d-none d-sm-inline">Logout </span><i className="icon-logout"></i></a>
+                                        <Link to="/login" id="logout" className="nav-link"> <span className="d-none d-sm-inline">Logout </span><i className="icon-logout"></i></Link>
                                     </div>
                                 </div>
                                 </div>
