@@ -4,13 +4,17 @@ import $ from "jquery";
 class Studentlist extends React.Component{
     constructor(props){
         super(props);
+       // this.showModal=this.showModal.bind(this);
         
     }
     /*********show modal function defination ****/
-    showModal=(param)=>{
+   /*  showModal=(param)=>{
         $('#'+param).modal('show');
-    }
+    } */
 
+   /*  componentDidMount(){
+      this.showModal('addStudentModal')
+    } */
 
     render(){
         return(
@@ -23,7 +27,7 @@ class Studentlist extends React.Component{
                             </div>
                             <div className="col-md-4"></div>
                             <div className="col-md-4">
-                                <button className="btn btn-primary pull-right" onClick={()=>{this.showModal('addStudentModal')}}>Add</button>
+                                <button className="btn btn-primary pull-right" data-toggle="modal" data-target="#addStudentModal">Add</button>
                             </div>
                         </div>
                     </div>
