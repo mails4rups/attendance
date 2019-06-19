@@ -1,20 +1,28 @@
 import React from 'react';
+import Modal from 'react-bootstrap/Modal';
 
 class Studentlist extends React.Component{
     constructor(props){
         super(props);
         
-       // this.showModal=this.showModal.bind(this);
+        this.state = {
+          showAddStudentModal: false,
+        };
+
+        this.openAddStudentModal=this.openAddStudentModal.bind(this);
+        this.closeAddStudentModal=this.closeAddStudentModal.bind(this);
         
     }
-    /*********show modal function defination ****/
-   /*  showModal=(param)=>{
-        $('#'+param).modal('show');
-    } */
+    
+    /******function defination for showing student modal****/
+    openAddStudentModal=()=>{
+      this.setState({showAddStudentModal:true});
+    }
 
-   /*  componentDidMount(){
-      this.showModal('addStudentModal')
-    } */
+    /******function defination for closing student modal****/
+    closeAddStudentModal=()=>{
+      this.setState({showAddStudentModal:false});
+    }
 
     render(){
         return(
@@ -27,7 +35,7 @@ class Studentlist extends React.Component{
                             </div>
                             <div className="col-md-4"></div>
                             <div className="col-md-4">
-                                <button className="btn btn-primary pull-right" data-toggle="modal" data-target="#addStudentModal">Add</button>
+                                <button className="btn btn-primary pull-right" onClick={this.openAddStudentModal}>Add</button>
                             </div>
                         </div>
                     </div>
@@ -66,32 +74,14 @@ class Studentlist extends React.Component{
                 </div>
             </section>
 
-            <div id="addStudentModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" className="modal fade text-left">
-                      <div role="document" className="modal-dialog">
-                        <div className="modal-content">
-                          <div className="modal-header"><strong id="exampleModalLabel" className="modal-title">Signin Modal</strong>
-                            <button type="button" data-dismiss="modal" aria-label="Close" className="close"><span aria-hidden="true">×</span></button>
-                          </div>
-                          <div className="modal-body">
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
-                            <form>
-                              {/* <div className="form-group">
-                                <label>Email</label>
-                                <input type="email" placeholder="Email Address" className="form-control"/>
-                              </div>
-                              <div className="form-group">       
-                                <label>Password</label>
-                                <input type="password" placeholder="Password" className="form-control"/>
-                              </div> */}
-                              <div className="form-group">       
-                                <input type="submit" value="Signin" className="btn btn-primary"/>
-                              </div>
-                            </form>
-                          </div>
-                          
-                        </div>
-                      </div>
-                    </div>
+            <Modal show={this.state.showAddStudentModal} onHide={this.closeAddStudentModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          
+        </Modal>
+
 
             </div>    
 
