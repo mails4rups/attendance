@@ -13,7 +13,7 @@ class Sidebar extends  React.Component{
                 <nav id="sidebar">
                         <div className="sidebar-header d-flex align-items-center">
                             <div className="avatar">
-                                <img src={require('../img/avatar-6.jpg')} alt="..." className="img-fluid rounded-circle"/>
+                                <img src={require('../assets/img/avatar-6.jpg')} alt="..." className="img-fluid rounded-circle"/>
                             </div>
                             <div className="title">
                                 <h1 className="h5">Mark Stephen</h1>

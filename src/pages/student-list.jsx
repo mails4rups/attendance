@@ -1,9 +1,9 @@
 import React from 'react';
-import $ from "jquery";
 
 class Studentlist extends React.Component{
     constructor(props){
         super(props);
+        
        // this.showModal=this.showModal.bind(this);
         
     }
