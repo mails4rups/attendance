@@ -40,7 +40,7 @@ function App() {
         <Switch>
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/employee" component={Employeelist} />
-            <Route component={Notfound}/>
+            {/* <Route component={Notfound}/> */}
           </Switch>
         </div>
       <Footer/>

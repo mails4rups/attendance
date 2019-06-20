@@ -10,7 +10,8 @@ class Settings extends React.Component{
         toast: true,
         position: 'bottom-end',
         showConfirmButton: false,
-        timer: 3000
+        timer: 3000,
+        background: '#2d3035',
       });
       
        Toast.fire({

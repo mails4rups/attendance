@@ -28,8 +28,8 @@ class Sidebar extends  React.Component{
                             <li className={currentRoute==='/dashboard' ? "active" : ''}>
                                 <Link  to="/dashboard"> <i className="icon-home"></i>Dashboard </Link>
                             </li>
-                            <li className={currentRoute==='/student-list' ? "active" : ''}>
-                                <Link  to="/student-list"> <i className="icon-grid"></i>Students </Link>
+                            <li className={currentRoute==='/employee' ? "active" : ''}>
+                                <Link  to="/employee"> <i className="icon-grid"></i>Employees </Link>
                             </li>
                         
                         </ul>
