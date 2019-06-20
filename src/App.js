@@ -24,7 +24,7 @@ import Footer from './component/footer';
 
 import Dashboard from './pages/dashboard';
 import Login from './pages/login';
-import Studentlist from './pages/student-list';
+import Employeelist from './pages/employee-list;
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
         <Sidebar/>
         <Switch>
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/student-list" component={Studentlist} />
+            <Route path="/employee" component={Employeelist} />
             {/* <Route component={}/> */}
           </Switch>
         </div>
