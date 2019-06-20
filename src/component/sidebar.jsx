@@ -6,7 +6,9 @@ class Sidebar extends  React.Component{
     render(){
         let currentRoute=this.props.location.pathname;
 
-        if(this.props.location.pathname==='/login' || this.props.location.pathname==='/'){
+        if(
+            this.props.location.pathname==='/login' || this.props.location.pathname==='/'
+        ){
             return null
         }else{
             return(

@@ -22,7 +22,12 @@ class Login extends React.Component{
         let password=e.target.loginPassword.value;
         console.log(username,password);
         if(username!=='' && password!==''){
-            Settings.uiToast('success','Please Provide username and password');
+            if(username==='admin' && password==='Abcd@123'){
+                Settings.uiToast('success','Login successfull');
+                this.props.history.push('dashboard');
+            }else{
+                Settings.uiToast('error','username or password mismatched');
+            }
         }else{
             Settings.uiToast('error','Please Provide username and password');
         }

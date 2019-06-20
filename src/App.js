@@ -24,6 +24,7 @@ import Footer from './component/footer';
 
 import Dashboard from './pages/dashboard';
 import Login from './pages/login';
+import Notfound from './pages/notfound';
 import Employeelist from './pages/employee-list';
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
         <Switch>
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/employee" component={Employeelist} />
-            {/* <Route component={}/> */}
+            <Route component={Notfound}/>
           </Switch>
         </div>
       <Footer/>

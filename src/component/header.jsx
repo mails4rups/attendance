@@ -4,7 +4,9 @@ import {Link,withRouter} from 'react-router-dom';
 class Header extends React.Component{
 
     render(){
-            if(this.props.location.pathname==='/login' || this.props.location.pathname==='/'){
+            if(
+                this.props.location.pathname==='/login' || this.props.location.pathname==='/'
+            ){
                 return null;
             }else{
                 return(
