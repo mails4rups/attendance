@@ -3,17 +3,17 @@ import Swal from 'sweetalert2'
 
 class Settings extends React.Component{
 
-  uiToast = (type,message) =>{
+  static uiToast = (type,message) =>{
 
     
-    const Toast = Swal.mixin({
+     const Toast = Swal.mixin({
         toast: true,
         position: 'bottom-end',
         showConfirmButton: false,
         timer: 3000
       });
       
-    return  Toast.fire({
+       Toast.fire({
         type: type,
         title: message
       })

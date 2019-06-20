@@ -22,7 +22,7 @@ class Login extends React.Component{
         let password=e.target.loginPassword.value;
         console.log(username,password);
         if(username!=='' && password!==''){
-            Settings.uiToast('Success','Please Provide username and password');
+            Settings.uiToast('success','Please Provide username and password');
         }else{
             Settings.uiToast('error','Please Provide username and password');
         }
@@ -49,11 +49,11 @@ class Login extends React.Component{
                             <div className="content">
                                 <form className=" mb-4" onSubmit={this.login}>
                                     <div className="form-group">
-                                        <input id="login-username" type="text" name="loginUsername" required data-msg="Please enter your username" className="input-material"/>
+                                        <input id="login-username" type="text" name="loginUsername"  data-msg="Please enter your username" className="input-material"/>
                                         <label  className="label-material">User Name</label>
                                     </div>
                                     <div className="form-group">
-                                        <input id="login-password" type="password" name="loginPassword" required data-msg="Please enter your password" className="input-material" />
+                                        <input id="login-password" type="password" name="loginPassword"  data-msg="Please enter your password" className="input-material" />
                                         <label  className="label-material">Password</label>
                                     </div>
                                     <button type="submit" className="btn btn-primary">Login</button>
