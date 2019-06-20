@@ -1,6 +1,33 @@
 import React from 'react';
+import Settings from '../utils/settings';
 
 class Login extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state={
+            username: '',
+            password: ''
+        }
+        
+        this.login=this.login.bind(this);
+
+       
+    }
+
+     /*******defination for login function ****/
+     login=(e)=>{
+        e.preventDefault();
+        let username=e.target.loginUsername.value;
+        let password=e.target.loginPassword.value;
+        console.log(username,password);
+        if(username!=='' && password!==''){
+            Settings.uiToast('Success','Please Provide username and password');
+        }else{
+            Settings.uiToast('error','Please Provide username and password');
+        }
+    }
+
     render(){
         return(
             <div className="login-page">
@@ -20,7 +47,7 @@ class Login extends React.Component{
                         <div className="col-lg-6">
                         <div className="form d-flex align-items-center">
                             <div className="content">
-                                <form method="get" className="form-validate mb-4">
+                                <form className=" mb-4" onSubmit={this.login}>
                                     <div className="form-group">
                                         <input id="login-username" type="text" name="loginUsername" required data-msg="Please enter your username" className="input-material"/>
                                         <label  className="label-material">User Name</label>

@@ -24,7 +24,7 @@ import Footer from './component/footer';
 
 import Dashboard from './pages/dashboard';
 import Login from './pages/login';
-import Employeelist from './pages/employee-list;
+import Employeelist from './pages/employee-list';
 
 function App() {
   return (

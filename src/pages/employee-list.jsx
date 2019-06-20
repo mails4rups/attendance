@@ -1,27 +1,27 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 
-class Studentlist extends React.Component{
+class Employeelist extends React.Component{
     constructor(props){
         super(props);
         
         this.state = {
-          showAddStudentModal: false,
+          showAddEmployeeModal: false,
         };
 
-        this.openAddStudentModal=this.openAddStudentModal.bind(this);
-        this.closeAddStudentModal=this.closeAddStudentModal.bind(this);
+        this.openAddEmployeeModal=this.openAddEmployeeModal.bind(this);
+        this.closeAddEmployeeModal=this.closeAddEmployeeModal.bind(this);
         
     }
     
-    /******function defination for showing student modal****/
-    openAddStudentModal=()=>{
-      this.setState({showAddStudentModal:true});
+    /******function defination for showing Employee modal****/
+    openAddEmployeeModal=()=>{
+      this.setState({showAddEmployeeModal:true});
     }
 
-    /******function defination for closing student modal****/
-    closeAddStudentModal=()=>{
-      this.setState({showAddStudentModal:false});
+    /******function defination for closing Employee modal****/
+    closeAddEmployeeModal=()=>{
+      this.setState({showAddEmployeeModal:false});
     }
 
     render(){
@@ -31,11 +31,11 @@ class Studentlist extends React.Component{
                     <div className="container-fluid">
                         <div className="row">
                             <div className="col-md-4">
-                            <h2 className="h5 no-margin-bottom">Student-List</h2>
+                            <h2 className="h5 no-margin-bottom">Employee-List</h2>
                             </div>
                             <div className="col-md-4"></div>
                             <div className="col-md-4">
-                                <button className="btn btn-primary pull-right" onClick={this.openAddStudentModal}>Add</button>
+                                <button className="btn btn-primary pull-right" onClick={this.openAddEmployeeModal}>Add</button>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ class Studentlist extends React.Component{
                                     <tr>
                                     <th className="text-center">Roll No</th>
                                     <th className="text-center">Full Name</th>
-                                    <th className="text-center">Department</th>
+                                    <th className="text-center">Designation</th>
                                     <th className="text-center">Total Attendance</th>
                                     <th className="text-center">Status</th>
                                     </tr>
@@ -60,8 +60,22 @@ class Studentlist extends React.Component{
                                     <tr>
                                         <th scope="row" className="text-center">334</th>
                                         <td className="text-center">Mark George</td>
-                                        <td className="text-center">Computer Science</td>
+                                        <td className="text-center">Front-End</td>
                                         <td className="text-center">45</td>
+                                        <td className="text-center text-green">Eligible</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" className="text-center">335</th>
+                                        <td className="text-center">Karl Figure</td>
+                                        <td className="text-center">Back-End</td>
+                                        <td className="text-center">49</td>
+                                        <td className="text-center text-green">Eligible</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" className="text-center">336</th>
+                                        <td className="text-center">Diana Carl</td>
+                                        <td className="text-center">IOS</td>
+                                        <td className="text-center">53</td>
                                         <td className="text-center text-green">Eligible</td>
                                     </tr>
                                     
@@ -74,12 +88,28 @@ class Studentlist extends React.Component{
                 </div>
             </section>
 
-            <Modal show={this.state.showAddStudentModal} onHide={this.closeAddStudentModal}>
+            <Modal show={this.state.showAddEmployeeModal} onHide={this.closeAddEmployeeModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Add Employee</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-          
+          <Modal.Body>
+              <form>
+                  <div className="form-group">
+                    <input type="text" className="form-control" name="addEmployeeName" placeholder="Add employee name"/>
+                  </div>
+                  <div className="form-group">
+                    <input type="text" className="form-control" name="addEmployeePhone" placeholder="Add phone number" />
+                  </div>
+                  <div className="form-group">
+                      <select name="addEmployeeDesignation" ref="addEmployeeDesignation" className="form-control">
+                          <option value="">Select Designation</option>
+                          <option value="1">Front-End Developer</option>
+                          <option value="2">Java Developer</option>
+                          <option value="3">IOS</option>
+                      </select>
+                  </div>
+              </form>
+          </Modal.Body>
         </Modal>
 
 
@@ -89,4 +119,4 @@ class Studentlist extends React.Component{
     }
 }
 
-export default Studentlist;
+export default Employeelist;
