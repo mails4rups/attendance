@@ -3,6 +3,13 @@ import {Link,withRouter} from 'react-router-dom';
 
 
 class Sidebar extends  React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            shrinkSidebar:this.props.sidebarType,
+        }
+    }
+    
     render(){
         let currentRoute=this.props.location.pathname;
 

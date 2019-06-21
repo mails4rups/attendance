@@ -1,7 +1,29 @@
 import React from 'react';
+import Sidebar from './sidebar';
 import {Link,withRouter} from 'react-router-dom';
 
 class Header extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            shrinkSidebar:this.props.sidebarType,
+        }
+
+        this.toggleSideBar=this.toggleSideBar.bind(this);
+    }
+
+    /*******function defination for toggle sidebar*****/
+    toggleSideBar=()=>{
+        if(this.state.shrinkSidebar===false){
+            var presentState=true;
+        }else{
+            var presentState=false;
+        }
+
+        this.setState({shrinkSidebar:presentState});
+        this.props.sidebarType({presentState});
+    }
+
 
     render(){
             if(
@@ -19,7 +41,7 @@ class Header extends React.Component{
                                     <div className="brand-text brand-big visible text-uppercase"><strong className="text-primary">Dark</strong><strong>Admin</strong></div>
                                     <div className="brand-text brand-sm"><strong className="text-primary">D</strong><strong>A</strong></div>
                                     </a>
-                                    <button className="sidebar-toggle"><i className="fa fa-long-arrow-left"></i></button>
+                                    <button onClick={this.toggleSideBar} className="sidebar-toggle"><i className="fa fa-long-arrow-left"></i></button>
                                 </div>
                                 <div className="right-menu list-inline no-margin-bottom">    
                                     <div className="list-inline-item"><a href="#" className="search-open nav-link"><i className="icon-magnifying-glass-browser"></i></a></div>
@@ -33,7 +55,9 @@ class Header extends React.Component{
                                 </div>
                                 </div>
                             </nav>
+                            
                             </header>
+                            
                 );
             }
     }

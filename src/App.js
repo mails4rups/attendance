@@ -27,27 +27,48 @@ import Login from './pages/login';
 import Notfound from './pages/notfound';
 import Employeelist from './pages/employee-list';
 
-function App() {
-  return (
-   <Router>
-     
-     <Route path="/login" component={Login} />
-     <Route path="/" component={Login} exact/>
+class App extends React.Component {
 
-     <Header/>
-        <div className="d-flex align-items-stretch">
-        <Sidebar/>
-        <Switch>
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/employee" component={Employeelist} />
-            {/* <Route component={Notfound}/> */}
-          </Switch>
-        </div>
-      <Footer/>
+  constructor(props){
+    super(props);
 
-   </Router>
+    this.state={
+      sideBarShrink:false,
+    }
+
+    this.handleChangeForSidebar=this.handleChangeForSidebar.bind(this);
+  }
+
+  /*******function defination for sidebar type*****/
+  handleChangeForSidebar=(param)=>{
+    this.setState({sideBarShrink:param});
+
+  }
+  render(){
+    console.log(this.state.sideBarShrink);
+    return (
+      
+      <Router>
+        
+        <Route path="/login" component={Login} />
+        <Route path="/" component={Login} exact/>
    
-  );
+        <Header sidebarType={this.handleChangeForSidebar}/>
+           <div className="d-flex align-items-stretch">
+           <Sidebar sidebarType={this.state.sideBarShrink}/>
+           <Switch>
+               <Route path="/dashboard" component={Dashboard} />
+               <Route path="/employee" component={Employeelist} />
+               {/* <Route component={Notfound}/> */}
+             </Switch>
+           </div>
+         <Footer/>
+   
+      </Router>
+      
+     );
+  }
+  
 }
 
 export default App;
