@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 
+ 
+import "react-datepicker/dist/react-datepicker.css";
 import  './assets/vendor/bootstrap/css/bootstrap.min.css';
 import  './assets/vendor/font-awesome/css/font-awesome.min.css';
 import  './assets/css/font.css';
@@ -24,6 +26,7 @@ import Footer from './component/footer';
 
 import Dashboard from './pages/dashboard';
 import Login from './pages/login';
+import Holidays from './pages/holidays';
 import Notfound from './pages/notfound';
 import Employeelist from './pages/employee-list';
 
@@ -59,6 +62,7 @@ class App extends React.Component {
            <Switch>
                <Route path="/dashboard" component={Dashboard} />
                <Route path="/employee" component={Employeelist} />
+               <Route path="/holidays" component={Holidays} />
                {/* <Route component={Notfound}/> */}
              </Switch>
            </div>
