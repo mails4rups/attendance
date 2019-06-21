@@ -5,12 +5,12 @@ import {Link,withRouter} from 'react-router-dom';
 class Sidebar extends  React.Component{
     constructor(props){
         super(props);
-        this.state={
-            shrinkSidebar:this.props.sidebarType,
-        }
+        
     }
-    
+
     render(){
+        console.log(this.props.sidebarType.presentState)
+
         let currentRoute=this.props.location.pathname;
 
         if(
@@ -19,7 +19,7 @@ class Sidebar extends  React.Component{
             return null
         }else{
             return(
-                <nav id="sidebar">
+                <nav id="sidebar" className={this.props.sidebarType.presentState === true ?'shrinked':null}>
                         <div className="sidebar-header d-flex align-items-center">
                             <div className="avatar">
                                 <img src={require('../assets/img/avatar-6.jpg')} alt="..." className="img-fluid rounded-circle"/>
