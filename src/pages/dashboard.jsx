@@ -1,4 +1,6 @@
 import React from 'react';
+import Card from '../utils/card';
+import {Pie} from 'react-chartjs-2'
 
 class Dashboard extends React.Component{
 
@@ -10,6 +12,15 @@ class Dashboard extends React.Component{
                         <h2 className="h5 no-margin-bottom">Dashboard</h2>
                     </div>
                 </div>
+                <section className="no-padding-top">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-md-3 col-sm-6">
+                                <Card title={'Hello World'}/>
+                            </div>
+                        </div>
+                    </div>
+                </section>    
 
             </div>    
 

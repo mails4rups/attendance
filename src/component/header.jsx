@@ -1,5 +1,4 @@
 import React from 'react';
-import Sidebar from './sidebar';
 import {Link,withRouter} from 'react-router-dom';
 
 class Header extends React.Component{
