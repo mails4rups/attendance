@@ -103,7 +103,7 @@ class Holidays extends React.Component{
                         dateFormat='dd/MM/yyyy'
                     />
                   </div>
-                  
+                  <button className="btn btn-primary">Add</button>
                   
               </form>
           </Modal.Body>

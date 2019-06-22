@@ -28,6 +28,7 @@ import Dashboard from './pages/dashboard';
 import Login from './pages/login';
 import Holidays from './pages/holidays';
 import Notfound from './pages/notfound';
+import Protocols from './pages/protocols';
 import Employeelist from './pages/employee-list';
 
 class App extends React.Component {
@@ -63,6 +64,7 @@ class App extends React.Component {
                <Route path="/dashboard" component={Dashboard} />
                <Route path="/employee" component={Employeelist} />
                <Route path="/holidays" component={Holidays} />
+               <Route path="/protocols" component={Protocols} />
                {/* <Route component={Notfound}/> */}
              </Switch>
            </div>
